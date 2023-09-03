@@ -44,7 +44,7 @@
                             </div>
                         </div>
                         <div class="card-footer">
-                            <a href="#" class="btn btn-dark btn-block"> <i class="fas fa-eye"></i> Detail</a>
+                            <a href="{{ route('products-detail', $product->id) }}" class="btn btn-dark btn-block"> <i class="fas fa-eye"></i> Detail</a>
                         </div>
                     </div>
                 </div>
