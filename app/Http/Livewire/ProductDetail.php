@@ -72,6 +72,8 @@ class ProductDetail extends Component
         $p_detail->pesanan_id = $cek_pesanan->id;
         $p_detail->save();
 
+        $this->emit('masukKeranjang');
+
         Session::flash('status', 'success');
         Session::flash('message', 'Sukses masuk keranjang');
 
