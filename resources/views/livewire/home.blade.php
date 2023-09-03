@@ -12,11 +12,13 @@
         <div class="row mt-3">
             @foreach ($ligas as $liga)
                 <div class="col">
-                    <div class="card shadow">
-                        <div class="card-body text-center">
-                            <img src="{{ asset('assets/liga/'.$liga->gambar) }}" class="img-fluid" alt="">
+                    <a href="{{ route('products-liga', $liga->id) }}">
+                        <div class="card shadow">
+                            <div class="card-body text-center">
+                                <img src="{{ asset('assets/liga/'.$liga->gambar) }}" class="img-fluid" alt="">
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             @endforeach
         </div>
@@ -24,7 +26,10 @@
 
     {{-- Product --}}
     <section class="product mt-5">
-        <h3><strong>Best Products</strong></h3>
+        <h3>
+            <strong>Best Products</strong>
+            <a href="{{ route('products') }}" class="btn btn-dark float-right"> <i class="fas fa-eye"></i> Lihat Semua</a>
+        </h3>
         <div class="row mt-3">
             @foreach ($products as $product)
                 <div class="col">
@@ -39,7 +44,7 @@
                             </div>
                         </div>
                         <div class="card-footer">
-                            <a href="#" class="btn btn-dark btn-block">Detail</a>
+                            <a href="#" class="btn btn-dark btn-block"> <i class="fas fa-eye"></i> Detail</a>
                         </div>
                     </div>
                 </div>

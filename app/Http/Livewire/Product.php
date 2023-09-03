@@ -21,7 +21,8 @@ class Product extends Component
         }
 
         return view('livewire.product', [
-            'products' => $products
+            'products' => $products,
+            'title' => 'List Jersi',
         ]);
     }
 
