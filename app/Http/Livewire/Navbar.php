@@ -2,12 +2,16 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Liga;
 use Livewire\Component;
 
 class Navbar extends Component
 {
     public function render()
     {
-        return view('livewire.navbar');
+        $ligas = Liga::all();
+        return view('livewire.navbar', [
+            'ligas' => $ligas
+        ]);
     }
 }

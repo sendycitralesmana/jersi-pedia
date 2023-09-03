@@ -2,6 +2,7 @@
 
 use App\Http\Livewire\Home;
 use App\Http\Livewire\Login;
+use App\Http\Livewire\Product;
 use App\Http\Livewire\Register;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -27,3 +28,5 @@ Route::get('/', Home::class);
 Route::get('/home', Home::class)->name('home');
 Route::get('/login', Login::class)->name('login');
 Route::get('/register', Register::class)->name('register');
+
+Route::get('/products', Product::class)->name('products');
