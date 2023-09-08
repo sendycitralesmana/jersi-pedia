@@ -80,7 +80,7 @@
                             <tr>
                                 <td colspan="6" align="right"><strong>Total Yang Harus Dibayar :</strong></td>
                                 <td colspan="2">
-                                    <a href="#" class="btn btn-block btn-success">
+                                    <a href="{{ route('checkout') }}" class="btn btn-block btn-success">
                                         <i class="fas fa-arrow-right"></i> Checkout
                                     </a>
                                 </td>
