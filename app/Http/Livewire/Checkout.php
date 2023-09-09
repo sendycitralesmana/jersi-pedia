@@ -32,19 +32,19 @@ class Checkout extends Component
 
     public function checkout()
     {
-        // $this->validate([
-        //     'no_hp' => 'required',
-        //     'alamat' => 'required',
-        // ]);
+        $this->validate([
+            'no_hp' => 'required',
+            'alamat' => 'required',
+        ]);
 
-        // $user = User::where('id', Auth::user()->id)->first();
-        // $user->no_hp = $this->no_hp;
-        // $user->alamat = $this->alamat;
-        // $user->update();
+        $user = User::where('id', Auth::user()->id)->first();
+        $user->no_hp = $this->no_hp;
+        $user->alamat = $this->alamat;
+        $user->update();
         
-        // $pesanan = Pesanan::where('user_id', Auth::user()->id)->where('status', 0)->first();
-        // $pesanan->status = 1;
-        // $pesanan->update();
+        $pesanan = Pesanan::where('user_id', Auth::user()->id)->where('status', 0)->first();
+        $pesanan->status = 1;
+        $pesanan->update();
 
         $this->emit('masukKeranjang');
 

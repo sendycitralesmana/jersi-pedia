@@ -43,13 +43,17 @@ class Keranjang extends Component
 
     public function render()
     {
-        $this->pesanan = Pesanan::where('user_id', Auth::user()->id)->where('status', 0)->first();
-        if ($this->pesanan) {
-            $this->pesanan_detail = PesananDetail::where('pesanan_id', $this->pesanan->id)->get();
+        if (!Auth::user()) {
+            return view('livewire.keranjang');
+        } else {
+            $this->pesanan = Pesanan::where('user_id', Auth::user()->id)->where('status', 0)->first();
+            if ($this->pesanan) {
+                $this->pesanan_detail = PesananDetail::where('pesanan_id', $this->pesanan->id)->get();
+            }
+            return view('livewire.keranjang', [
+                'pesanan' => $this->pesanan,
+                'pesanan_details' => $this->pesanan_detail,
+            ]);
         }
-        return view('livewire.keranjang', [
-            'pesanan' => $this->pesanan,
-            'pesanan_details' => $this->pesanan_detail,
-        ]);
     }
 }

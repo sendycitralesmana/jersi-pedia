@@ -75,10 +75,10 @@
                             </tr>
                             <tr>
                                 <td colspan="7" align="right"><strong>Total Yang Harus Dibayar :</strong></td>
-                                <td><strong>Rp. {{ number_format($pesanan->total_harga) }}</strong> </td>
+                                <td><strong>Rp. {{ number_format($pesanan->total_harga + $pesanan->kode_unik) }}</strong> </td>
                             </tr>
                             <tr>
-                                <td colspan="6" align="right"><strong>Total Yang Harus Dibayar :</strong></td>
+                                <td colspan="6" align="right"></td>
                                 <td colspan="2">
                                     <a href="{{ route('checkout') }}" class="btn btn-block btn-success">
                                         <i class="fas fa-arrow-right"></i> Checkout

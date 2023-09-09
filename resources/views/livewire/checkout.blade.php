@@ -35,7 +35,6 @@
                   <p>No. Rekening 012345-678-910 atas nama <strong>Citra Lesmana</strong> </p>
                 </div>
             </div>
-            
         </div>
         <div class="col">
             <h4>Informasi Pengiriman</h4>
