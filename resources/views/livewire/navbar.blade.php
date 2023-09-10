@@ -28,6 +28,18 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('history') }}">History</a>
                 </li>
+                @if (auth()->user())
+                    @if (auth()->user()->role == 1)
+                        <li class="nav-item">
+                            <div class="form-inline">
+                                <a class="nav-link" href="{{ route('approved') }}">Approved</a>
+                                @if ( $jumlah_approved != 0)
+                                <span class="badge badge-danger">{{ $jumlah_approved }}</span>
+                                @endif
+                            </div>
+                        </li>
+                    @endif
+                @endif
             </ul>
 
             <!-- Right Side Of Navbar -->

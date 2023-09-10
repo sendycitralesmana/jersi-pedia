@@ -11,6 +11,7 @@ use Livewire\Component;
 class Navbar extends Component
 {
     public $jumlah = 0;
+    public $approved = 0;
 
     public function updateKeranjang()
     {
@@ -23,9 +24,22 @@ class Navbar extends Component
             }
         }
     }
+    
+    public function updateApproved()
+    {
+        if (Auth::user()) {
+            $pesanan = Pesanan::where('status', 1)->get();
+            if ($pesanan) {
+                $this->approved = $pesanan->count();
+            } else {
+                $this->approved = 0;
+            }
+        }
+    }
 
     protected $listeners = [
-        'masukKeranjang' => 'updateKeranjang'
+        'masukKeranjang' => 'updateKeranjang',
+        'masukApproved' => 'updateApproved'
     ];
 
     public function mount()
@@ -38,6 +52,15 @@ class Navbar extends Component
                 $this->jumlah = 0;
             }
         }
+        
+        if (Auth::user()) {
+            $pesanan = Pesanan::where('status', 1)->get();
+            if ($pesanan) {
+                $this->approved = $pesanan->count();
+            } else {
+                $this->approved = 0;
+            }
+        }
     }
 
     public function render()
@@ -46,6 +69,7 @@ class Navbar extends Component
         return view('livewire.navbar', [
             'ligas' => $ligas,
             'jumlah_pesanan' => $this->jumlah,
+            'jumlah_approved' => $this->approved,
         ]);
     }
 }

@@ -119,9 +119,10 @@
                             @endif
                             <tr>
                                 <td colspan="3">
-                                    <button type="submit" class="btn btn-block btn-dark" @if ($product->is_ready != 1)
+                                    <button type="submit" class="btn btn-block btn-dark" @if ($product->is_ready != 1 || auth()->user()->role == 1)
                                         disabled
-                                    @endif><i class="fas fa-shopping-cart"></i> Masukkan Keranjang</button>
+                                    @endif>
+                                    <i class="fas fa-shopping-cart"></i> Masukkan Keranjang</button>
                                 </td>
                             </tr>
                         </thead>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\Approved;
 use App\Http\Livewire\Checkout;
 use App\Http\Livewire\History;
 use App\Http\Livewire\Home;
@@ -41,3 +42,4 @@ Route::get('/products/{id}', ProductDetail::class)->name('products-detail');
 Route::get('/keranjang', Keranjang::class)->name('keranjang');
 Route::get('/checkout', Checkout::class)->name('checkout');
 Route::get('/history', History::class)->name('history');
+Route::get('/approved', Approved::class)->name('approved');
